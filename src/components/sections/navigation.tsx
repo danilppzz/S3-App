@@ -24,6 +24,7 @@ export function Navigation() {
     };
   }, []);
 
+  
   return (
     <header
       className={`dark:bg-[#08080B] flex h-[56px] justify-between items-center fixed top-0 w-full z-50 bg-opacity-10 backdrop-blur-[2px] ${
