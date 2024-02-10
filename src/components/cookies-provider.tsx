@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Cookie } from "lucide-react";
-import "./css/globals.css";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+
+import '@/components/css/globals.css'
 
 export function CookiesProvider() {
   const [showAlert, setShowAlert] = useState<boolean | undefined>(undefined);

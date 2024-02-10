@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="canonical" content="https://lucide.dev/" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="128x128" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
