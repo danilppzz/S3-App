@@ -1,9 +1,19 @@
 "use client";
+import "@/components/css/globals.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="dark:bg-[#08080B] flex h-[1200px] flex-col items-center justify-between p-24">
-      <h1 className="dark:text-white">Home Page</h1>
+    <main className="dark:bg-[#08080B] mt-[100px] h-[1200px]">
+      <section id="hero" className=" flex h-[600px] w-full items-center">
+        <div className=" bg-slate-500 h-full w-full desktop:mx-[300px]">
+
+        </div>
+      </section>
+      <section id="about" className=" flex h-[600px] w-full items-center">
+        <div className=" bg-green-500 h-full w-full desktop:mx-[300px]">
+          
+        </div>
+      </section>
     </main>
   );
 }

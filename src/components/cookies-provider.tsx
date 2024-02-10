@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { Cookie } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 
-import '@/components/css/globals.css'
+import "@/components/css/globals.css";
+import { assert, error } from "console";
 
 export function CookiesProvider() {
   const [showAlert, setShowAlert] = useState<boolean | undefined>(undefined);
@@ -18,16 +19,21 @@ export function CookiesProvider() {
       localStorage.setItem("cookies_accepted", "false");
       setShowAlert(true);
     } else if (booleanoConvertido == false) {
+      localStorage.setItem("cookies_accepted", "false");
       setShowAlert(true);
     } else {
-      setShowAlert(false);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 1000);
     }
   }, []);
 
-  const handleAcceptCookies = () => {
-    localStorage.setItem("cookies_accepted", "true");
-    setShowAlert(false);
-  };
+  function handleAcceptCookies() {
+    setTimeout(() => {
+      localStorage.setItem("cookies_accepted", "true");
+      setShowAlert(false);
+    }, 1000);
+  }
 
   return showAlert === undefined ? (
     <></>
@@ -37,8 +43,7 @@ export function CookiesProvider() {
         <Cookie className="h-4 w-4" />
         <AlertTitle>Cookies</AlertTitle>
         <AlertDescription>
-          I use cookies on this site to bring you a better experience.
-          {" "}
+          I use cookies on this site to bring you a better experience.{" "}
           <a
             onClick={() => handleAcceptCookies()}
             className=" text-cyan-600 hover:underline hover:cursor-pointer"

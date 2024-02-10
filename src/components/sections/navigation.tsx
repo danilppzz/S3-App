@@ -58,7 +58,7 @@ export function Navigation() {
           </Button>
         </Link>
         <Separator orientation="vertical" />
-        <ThemeButton />
+        <ThemeButton disabled={true}/>
         <Link href={"https://discord.com/invite/7MePMjSnNr"} target="_blank">
           <Button>Discord</Button>
         </Link>
