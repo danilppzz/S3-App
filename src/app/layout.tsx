@@ -23,16 +23,16 @@ export default function RootLayout({
         <link rel="canonical" content="https://lucide.dev/" />
       </head>
       <body className={inter.className}>
-        <Navigation />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Navigation />
           {children}
+          <CookiesProvider />
         </ThemeProvider>
-        <CookiesProvider />
       </body>
     </html>
   );
