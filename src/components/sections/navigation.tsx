@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ThemeButton } from "../theme-button";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+import Link from "next/link";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,17 +32,21 @@ export function Navigation() {
           : "border-b-[0.2px] border-gray-100 border-opacity-0"
       }`}
     >
-      <div className={`ml-4 flex items-center desktop:ml-[200px]`}>
-        <img src="/icon.png" className="w-12 h-12" alt="Logo" />
-        <h1 className="ml-2">danilppzz</h1>
-      </div>
-      <nav className={`flex items-center mr-4 space-x-4 desktop:mr-[200px] md:justify-end`}>
-        <h1 className="cursor-pointer">about</h1>
-        <h1 className="cursor-pointer">docs</h1>
+      <Link href={"/"}>
+        <div className={`ml-4 flex items-center desktop:ml-[200px]`}>
+          <img src="/icon.png" className="w-12 h-12" alt="Logo" />
+          <h1 className="ml-2 hover:underline">danilppzz</h1>
+        </div>
+      </Link>
+      <nav className={`flex items-center pr-4 space-x-4 desktop:pr-[200px] md:justify-end`}>
+        <Link className="cursor-pointer hover:underline" href={'#about'}>about</Link>
+        <Link className="cursor-pointer hover:underline" href={'/docs'}>docs</Link>
         <Separator orientation="vertical" />
         <ThemeButton />
         <Separator orientation="vertical" />
-        <Button>Log in</Button>
+        <Link href={"https://github.com/danilppzz"} target="_blank">
+          <Button>GitHub</Button>
+        </Link>
       </nav>
     </header>
   );
